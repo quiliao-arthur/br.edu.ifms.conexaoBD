@@ -31,7 +31,7 @@ public class Principal
                     System.out.println("Informe o ano de publicação:");
                     livroAdd.setAnoPublicacao(Integer.parseInt(sc.nextLine()));
                     System.out.println("Informe o nome da editora:");
-                    livroAdd.setEditora(eb.get())
+                    livroAdd.setEditora(eb.buscarPorNome(sc.nextLine()));
                     lb.adicionar(livroAdd);
                     break;
                 }
