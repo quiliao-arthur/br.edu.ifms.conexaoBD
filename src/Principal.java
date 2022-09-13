@@ -16,11 +16,23 @@ public class Principal
             opcao = menu();
             switch(opcao){
                 case 1:{
-                    eb.adicionar();
+                    Editora editoraAdd = new Editora();
+                    System.out.println("Informe o nome:");
+                    editoraAdd.setNome(sc.nextLine());
+                    System.out.println("Informe o código:");
+                    editoraAdd.setCodigo(Integer.parseInt(sc.nextLine()));
+                    eb.adicionar(editoraAdd);
                     break;
                 }
                 case 2:{
-                    lb.adicionar();
+                    Livro livroAdd = new Livro();
+                    System.out.println("Informe o nome:");
+                    livroAdd.setNome(sc.nextLine());
+                    System.out.println("Informe o ano de publicação:");
+                    livroAdd.setAnoPublicacao(Integer.parseInt(sc.nextLine()));
+                    System.out.println("Informe o nome da editora:");
+                    livroAdd.setEditora(eb.get())
+                    lb.adicionar(livroAdd);
                     break;
                 }
                 case 3:{
@@ -29,7 +41,7 @@ public class Principal
             }
         }while(opcao!=0);
     }
-    public int menu(){
+    public static int menu(){
         System.out.print("////////////////// Sistema Biblioteca° ////////////////////\n"+
                          "1 - Cadastro de Editora\n"+
                          "2 - Cadastro de Livro\n"+
